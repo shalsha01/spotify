@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:spotify/core/configs/assets/app_images.dart';
 import 'package:spotify/core/configs/assets/app_vectors.dart';
-import 'package:spotify/core/configs/theme/app_colors.dart'; // Import AppColors
+import 'package:spotify/core/configs/theme/app_colors.dart'; 
+import 'package:spotify/common/widgets/button/basic_app_button.dart'; // Ensure this import is correct and the file exists
+
  class GetStartedPage extends StatelessWidget {
   const GetStartedPage({super.key});
 
@@ -36,13 +38,18 @@ import 'package:spotify/core/configs/theme/app_colors.dart'; // Import AppColors
               horizontal: 50
             ),
             child: Column(
-                children: [
-                  Align(
-                    alignment: Alignment.topCenter,
-                    child: SvgPicture.asset(
-                      AppVectors.logo
-                    ),
-                  ),
+              children: [
+                Align(
+                alignment: Alignment.topCenter,
+                child: Padding(
+                padding: const EdgeInsets.only(top: 15.0), // Add padding to the top
+                child: SvgPicture.asset(
+                  AppVectors.logo,
+                  width: 60, // Set the desired width
+                  height: 60, // Set the desired height
+                ),
+                ),
+                ),
                   const Spacer(),
                   const Text(
                     'Enjoy Listening To Music',
@@ -62,18 +69,18 @@ import 'package:spotify/core/configs/theme/app_colors.dart'; // Import AppColors
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  // const SizedBox(height: 20,),
-                  // BasicAppButton(
-                  //   onPressed: () {
-                  //     Navigator.push(
-                  //       context,
-                  //       MaterialPageRoute(
-                  //         builder: (BuildContext context) => const ChooseModePage()
-                  //       )
-                  //    );
-                  //   },
-                  //   title: 'Get Started'
-                  // )
+                  const SizedBox(height: 20,),
+                  BasicAppButton(
+                    onPressed: () {
+                    //   Navigator.push(
+                    //     context,
+                    //     MaterialPageRoute(
+                    //       builder: (BuildContext context) => const ChooseModePage()
+                    //     )
+                    //  );
+                    },
+                    title: 'Get Started'
+                  )
                 ],
               ),
           ),
