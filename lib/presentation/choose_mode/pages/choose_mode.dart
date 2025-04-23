@@ -60,6 +60,28 @@ class ChooseModePage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 21,),
+                  Row(
+                    mainAxisAlignment:MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        height: 50,
+                        width: 50,
+                        decoration:BoxDecoration(
+                          borderRadius: BorderRadius.circular(50),
+                          color: Colors.white,
+                        )
+                      ),
+                      SizedBox(width: 40),
+                      Container(
+                        height: 50,
+                        width: 50,
+                      decoration:BoxDecoration(
+                          borderRadius: BorderRadius.circular(50),
+                          color: Colors.white,
+                        )
+                        )
+                    ],
+                  )
                    
                
                   
