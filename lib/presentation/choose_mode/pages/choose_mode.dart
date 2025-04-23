@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spotify/core/configs/assets/app_images.dart';
 import 'package:spotify/core/configs/assets/app_vectors.dart';
 import 'package:spotify/core/configs/theme/app_colors.dart'; 
 import 'package:spotify/common/widgets/button/basic_app_button.dart'; 
-import 'package:spotify/presentation/choose_mode/pages/choose_mode.dart'; 
- class GetStartedPage extends StatelessWidget {
-  const GetStartedPage({super.key});
+
+
+class ChooseModePage extends StatelessWidget {
+  const ChooseModePage({super.key});
 
   @override
-   Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
+       body: Stack(
         children: [
           Container(
             padding: const EdgeInsets.symmetric(
@@ -22,7 +23,7 @@ import 'package:spotify/presentation/choose_mode/pages/choose_mode.dart';
               image: DecorationImage(
                 fit: BoxFit.fill,
                 image: AssetImage(
-                  AppImages.introBG,
+                  AppImages.chooseModeBG,
                 )
               )
             ),
@@ -86,6 +87,7 @@ import 'package:spotify/presentation/choose_mode/pages/choose_mode.dart';
           ),
         ],
       ),
+    
     );
   }
 }
