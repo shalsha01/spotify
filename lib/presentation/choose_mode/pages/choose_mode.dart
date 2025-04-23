@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:spotify/core/configs/theme/app_colors.dart'; 
 import 'package:spotify/core/configs/assets/app_images.dart';
 import 'package:spotify/core/configs/assets/app_vectors.dart';
+import 'package:spotify/presentation/splash/pages/splash.dart';
 import 'package:spotify/common/widgets/button/basic_app_button.dart'; 
 
 
@@ -11,7 +13,8 @@ class ChooseModePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       body: Stack(
+      backgroundColor: AppColors.lightBackgroundColor,
+      body: Stack(
         children: [
           Container(
             padding: const EdgeInsets.symmetric(
@@ -34,75 +37,121 @@ class ChooseModePage extends StatelessWidget {
 
           Padding(
             padding: const EdgeInsets.symmetric(
-              vertical: 50,
-              horizontal: 50
+              vertical: 40,
+              horizontal: 40
             ),
             child: Column(
-              children: [
-                Align(
-                alignment: Alignment.topCenter,
-                child: Padding(
-                padding: const EdgeInsets.only(top: 15.0), // Add padding to the top
-                child: SvgPicture.asset(
-                  AppVectors.logo,
-                  width: 60, // Set the desired width
-                  height: 60, // Set the desired height
-                ),
-                ),
-                ),
+                children: [
+                  Align(
+                    alignment: Alignment.topCenter,
+                    child: SvgPicture.asset(
+                      AppVectors.logo
+                    ),
+                  ),
                   const Spacer(),
                   const Text(
-                    'Choose Your Mode',
+                    'Choose Mode',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                       fontSize: 18
                     ),
                   ),
-                  const SizedBox(height: 21,),
-                  Row(
-                    mainAxisAlignment:MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        height: 50,
-                        width: 50,
-                        decoration:BoxDecoration(
-                          borderRadius: BorderRadius.circular(50),
-                          color: Colors.white,
+                  const SizedBox(height: 40,),
+                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    // Column(
+                    //   children: [
+                    //     GestureDetector(
+                    //       onTap: (){
+                    //         context.read<ThemeCubit>().updateTheme(ThemeMode.dark);
+                    //       },
+                    //       child: ClipOval(
+                    //         child: BackdropFilter(
+                    //           filter: ImageFilter.blur(sigmaX: 10,sigmaY: 10),
+                    //           child: Container(
+                    //             height: 80,
+                    //             width: 80,
+                    //             decoration: BoxDecoration(
+                    //               color: const Color(0xff30393C).withOpacity(0.5),
+                    //               shape: BoxShape.circle
+                    //             ),
+                    //             child: SvgPicture.asset(
+                    //               AppVectors.moon,
+                    //               fit: BoxFit.none,
+                    //             ),
+                    //           ),
+                    //         ),
+                    //       ),
+                    //     ),
+                        const SizedBox(height: 15,),
+                        const Text(
+                          'Dark Mode',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 17,
+                            color: AppColors.grayColor
+                          ),
                         )
-                      ),
-                      SizedBox(width: 40),
-                      Container(
-                        height: 50,
-                        width: 50,
-                      decoration:BoxDecoration(
-                          borderRadius: BorderRadius.circular(50),
-                          color: Colors.white,
+                      ],
+                    ),
+                    const SizedBox(width: 40,),
+                    // Column(
+                    //   children: [
+                    //     GestureDetector(
+                    //       onTap: (){
+                    //         context.read<ThemeCubit>().updateTheme(ThemeMode.light);
+                    //       },
+                    //       child: ClipOval(
+                    //         child: BackdropFilter(
+                    //           filter: ImageFilter.blur(sigmaX: 10,sigmaY: 10),
+                    //           child: Container(
+                    //             height: 80,
+                    //             width: 80,
+                    //             decoration: BoxDecoration(
+                    //               color: const Color(0xff30393C).withOpacity(0.5),
+                    //               shape: BoxShape.circle
+                    //             ),
+                    //              child: SvgPicture.asset(
+                    //               AppVectors.sun,
+                    //               fit: BoxFit.none,
+                    //             ),
+                    //           ),
+                    //         ),
+                    //       ),
+                    //     ),
+                      const SizedBox(height: 15,),
+                        const Text(
+                          'Light Mode',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 17,
+                            color: AppColors.grayColor
+                          ),
                         )
-                        )
-                    ],
-                  )
-                   
-               
-                  
-                  const SizedBox(height:50,),
+                      ],
+                    ),
+                  // ],
+                 ),
+                  const SizedBox(height: 50,),
                   BasicAppButton(
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (BuildContext context) => const ChooseModePage()
+                            builder: (BuildContext context) => const SplashPage()
                         )
                      );
                     },
-                    title: 'Get Started'
+                    title: 'Continue' 
                   )
                 ],
-              ),
-          ),
-        ],
-      ),
-    
-    );
+              )
+              );
+    //       ),
+    //     ],
+    //   ),
+    // );
   }
 }
