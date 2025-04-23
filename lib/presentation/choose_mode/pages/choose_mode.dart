@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spotify/core/configs/assets/app_images.dart';
 import 'package:spotify/core/configs/assets/app_vectors.dart';
-import 'package:spotify/core/configs/theme/app_colors.dart'; 
 import 'package:spotify/common/widgets/button/basic_app_button.dart'; 
 
 
@@ -53,7 +52,7 @@ class ChooseModePage extends StatelessWidget {
                 ),
                   const Spacer(),
                   const Text(
-                    'Enjoy Listening To Music',
+                    'Choose Your Mode',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
@@ -61,16 +60,10 @@ class ChooseModePage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 21,),
-                   const Text(
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.grayColor,
-                      fontSize: 13
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                  const SizedBox(height: 20,),
+                   
+               
+                  
+                  const SizedBox(height:50,),
                   BasicAppButton(
                     onPressed: () {
                       Navigator.push(
