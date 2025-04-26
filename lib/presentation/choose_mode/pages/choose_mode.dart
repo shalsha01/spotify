@@ -38,15 +38,17 @@ class ChooseModePage extends StatelessWidget {
 
           Padding(
             padding: const EdgeInsets.symmetric(
-              vertical: 40,
-              horizontal: 40
+              vertical: 60,
+              horizontal: 60
             ),
             child: Column(
                 children: [
                   Align(
                     alignment: Alignment.topCenter,
                     child: SvgPicture.asset(
-                      AppVectors.logo
+                      AppVectors.logo,
+                      width: 60, // Set the desired width
+                      height: 60, // Set the desired height
                     ),
                   ),
                   const Spacer(),
@@ -135,7 +137,7 @@ class ChooseModePage extends StatelessWidget {
                     ),
                   ],
                  ),
-                  const SizedBox(height: 50,),
+                    const SizedBox(height: 50),
                   BasicAppButton(
                     onPressed: () {
                       Navigator.push(
@@ -145,7 +147,7 @@ class ChooseModePage extends StatelessWidget {
                         )
                      );
                     },
-                    title: 'Continue'
+                    title: 'Continue',
                   )
                 ],
               ),
