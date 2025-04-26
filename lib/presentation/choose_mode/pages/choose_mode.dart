@@ -1,17 +1,18 @@
 import 'dart:ui';
-
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' show Align, Alignment, AssetImage, BackdropFilter, BoxDecoration, BoxFit, BoxShape, BuildContext, ClipOval, Color, Colors, Column, Container, DecorationImage, EdgeInsets, FontWeight, GestureDetector, MainAxisAlignment, MaterialPageRoute, Navigator, Padding, Row, Scaffold, SizedBox, Spacer, Stack, StatelessWidget, Text, TextStyle, ThemeMode, Widget;
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spotify/core/configs/theme/app_colors.dart'; 
 import 'package:spotify/core/configs/assets/app_images.dart';
 import 'package:spotify/core/configs/assets/app_vectors.dart';
 import 'package:spotify/presentation/splash/pages/splash.dart';
+import 'package:flutter_bloc/flutter_bloc.dart'; // Ensure Bloc package is imported
+import 'package:spotify/presentation/choose_mode/bloc/theme_cubit.dart'; // Import ThemeCubit if defined in your project
 import 'package:spotify/common/widgets/button/basic_app_button.dart'; 
 class ChooseModePage extends StatelessWidget {
   const ChooseModePage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.lightBackgroundColor,
       body: Stack(
@@ -32,22 +33,21 @@ class ChooseModePage extends StatelessWidget {
           ),
 
           Container(
+            // ignore: deprecated_member_use
             color: Colors.black.withOpacity(0.15),
           ),
 
           Padding(
             padding: const EdgeInsets.symmetric(
-              vertical: 50,
-              horizontal: 50
+              vertical: 40,
+              horizontal: 40
             ),
             child: Column(
                 children: [
                   Align(
                     alignment: Alignment.topCenter,
                     child: SvgPicture.asset(
-                      AppVectors.logo,
-                      width: 60, // Set the desired width
-                      height: 60, // Set the desired height
+                      AppVectors.logo
                     ),
                   ),
                   const Spacer(),
@@ -66,9 +66,9 @@ class ChooseModePage extends StatelessWidget {
                     Column(
                       children: [
                         GestureDetector(
-                          // onTap: (){
-                          //   context.read<ThemeCubit>().updateTheme(ThemeMode.dark);
-                          // },
+                          onTap: (){
+                            context.read<ThemeCubit>().updateTheme(ThemeMode.dark);
+                          },
                           child: ClipOval(
                             child: BackdropFilter(
                               filter: ImageFilter.blur(sigmaX: 10,sigmaY: 10),
@@ -76,6 +76,7 @@ class ChooseModePage extends StatelessWidget {
                                 height: 80,
                                 width: 80,
                                 decoration: BoxDecoration(
+                                  // ignore: deprecated_member_use
                                   color: const Color(0xff30393C).withOpacity(0.5),
                                   shape: BoxShape.circle
                                 ),
@@ -102,9 +103,9 @@ class ChooseModePage extends StatelessWidget {
                     Column(
                       children: [
                         GestureDetector(
-                          // onTap: (){
-                          //   context.read<ThemeCubit>().updateTheme(ThemeMode.light);
-                          // },
+                          onTap: (){
+                            context.read<ThemeCubit>().updateTheme(ThemeMode.light);
+                          },
                           child: ClipOval(
                             child: BackdropFilter(
                               filter: ImageFilter.blur(sigmaX: 10,sigmaY: 10),
@@ -112,6 +113,7 @@ class ChooseModePage extends StatelessWidget {
                                 height: 80,
                                 width: 80,
                                 decoration: BoxDecoration(
+                                  // ignore: deprecated_member_use
                                   color: const Color(0xff30393C).withOpacity(0.5),
                                   shape: BoxShape.circle
                                 ),
