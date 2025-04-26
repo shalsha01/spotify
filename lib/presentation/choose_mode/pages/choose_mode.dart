@@ -12,7 +12,7 @@ class ChooseModePage extends StatelessWidget {
   const ChooseModePage({super.key});
 
   @override
-   Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.lightBackgroundColor,
       body: Stack(
@@ -33,7 +33,6 @@ class ChooseModePage extends StatelessWidget {
           ),
 
           Container(
-            // ignore: deprecated_member_use
             color: Colors.black.withOpacity(0.15),
           ),
 
@@ -76,7 +75,6 @@ class ChooseModePage extends StatelessWidget {
                                 height: 80,
                                 width: 80,
                                 decoration: BoxDecoration(
-                                  // ignore: deprecated_member_use
                                   color: const Color(0xff30393C).withOpacity(0.5),
                                   shape: BoxShape.circle
                                 ),
@@ -113,7 +111,6 @@ class ChooseModePage extends StatelessWidget {
                                 height: 80,
                                 width: 80,
                                 decoration: BoxDecoration(
-                                  // ignore: deprecated_member_use
                                   color: const Color(0xff30393C).withOpacity(0.5),
                                   shape: BoxShape.circle
                                 ),
